@@ -1,0 +1,409 @@
+Snippet 1:  
+
+public class InfiniteForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 10; i--) { 
+            System.out.println(i); 
+        } 
+    } 
+} 
+
+Error:-
+
+for iteration the loop has decrement operator, dou to which the i terminating condition never reach, its is always true that cause 
+loop to go for infinity.
+
+we can change it to finite loop by incrementing the i.
+
+Correction:-
+public class InfiniteForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 10; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+================================================================================================================================================================================================================================================================================================
+
+Snippet 2:  
+
+public class IncorrectWhileCondition { 
+    public static void main(String[] args) { 
+        int count = 5; 
+        while (count = 0) { 
+            System.out.println(count); 
+            count--; 
+        } 
+    } 
+} 
+
+Error:-
+
+the above code has assignment operator insted of comparision operator which give an error 
+
+Correction :-
+
+public class IncorrectWhileCondition { 
+    public static void main(String[] args) { 
+        int count = 5; 
+        while (count != 0) { 
+            System.out.println(count); 
+            count--; 
+        } 
+    } 
+}
+
+================================================================================================================================================================================================================================================================================================
+
+Snippet 3:  
+
+public class DoWhileIncorrectCondition { 
+    public static void main(String[] args) { 
+        int num = 0; 
+        do { 
+            System.out.println(num); 
+            num++; 
+        } while (num > 0); 
+    } 
+}
+
+
+Error:-
+
+the result will be infinite loop as there is no terminating condition .
+to avoid that we have to set the terminating condition in the loop as given below, in while statement.
+
+
+Correction-
+
+public class DoWhileIncorrectCondition { 
+    public static void main(String[] args) { 
+        int num = 0; 
+        do { 
+            System.out.println(num); 
+            num++; 
+        } while (num < 10); 
+    } 
+}
+
+
+================================================================================================================================================================================================================================================================================================
+
+Snippet 4:  
+
+public class OffByOneErrorForLoop { 
+    public static void main(String[] args) { 
+
+        for (int i = 1; i <= 10; i++) { 
+
+            System.out.println(i); 
+        }        
+    } 
+}
+
+
+Error :-
+
+the loop terminating  is from 0 to 10 it will iterate till 10 the expected output will not be 9 
+
+to get the expected result we have to adjust the loop boundary to 9.
+
+
+Correction :-
+
+
+public class OffByOneErrorForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 1; i < 10; i++) { 
+            System.out.println(i); 
+        } 
+           } 
+} 
+
+
+================================================================================================================================================================================================================================================================================================
+
+
+Snippet 5:  
+public class WrongInitializationForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 10; i >= 0; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+} 
+
+Error :-
+
+the code is having the icrement order which will put the loop in infinite order.
+
+
+to prevent that the loop should be in decrement order to get the expected result.
+
+
+Correction :-
+
+public class WrongInitializationForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 10; i >= 0; i--) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+================================================================================================================================================================================================================================================================================================
+
+
+Snippet 6:  
+
+public class MisplacedForLoopBody { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) 
+            System.out.println(i); 
+            System.out.println("Done"); 
+    } 
+}
+
+Error :-
+
+The done print statement is not enclosed in the loop body due to lack of curley bracket, as a result it will be printed once.
+
+to get the expected output we should enclose SOP( i ), SOP ( "Done"); in curley bracket.
+
+
+Correction :-
+
+public class MisplacedForLoopBody { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) { 
+            System.out.println(i); 
+            System.out.println("Done"); 
+        } 
+    } 
+}
+
+================================================================================================================================================================================================================================================================================================
+
+
+Snippet 7:  
+
+public class UninitializedWhileLoop { 
+    public static void main(String[] args) { 
+
+        int count;  
+        while (count < 10) { 
+            System.out.println(count); 
+            count++; 
+        } 
+    } 
+}
+
+Error :-
+
+int Count is not initialzed, it will give compilation error.
+
+to avoid that initialize the count with default value.
+
+int iCount = 0; or int count = 1;
+
+
+Correction :-
+
+
+
+public class UninitializedWhileLoop { 
+    public static void main(String[] args) { 
+
+        int count = 0;
+        while (count < 10) { 
+            System.out.println(count); 
+            count++; 
+        } 
+    } 
+}
+
+
+========================================================================================================================================================================================================================================================================================================================
+
+
+Snippet 8:  
+
+public class OffByOneDoWhileLoop { 
+    public static void main(String[] args) { 
+        int num = 1; 
+        do { 
+            System.out.println(num); 
+            num--; 
+        } while (num > 0); 
+    } 
+}
+
+
+========================================================================================================================================================================================================================================================================================================================
+
+
+Snippet 9:  
+
+public class InfiniteForLoopUpdate { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i += 2) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+
+Error :-
+
+the loop will produce unexpected result, in the loop the i will iterate by 2.
+
+the produced result will be, 
+0
+2
+4
+
+
+to get the expected result as 
+0
+1
+2
+3
+4
+
+
+we have to increment the i by one.
+
+
+Correction :-
+
+public class CorrectForLoop { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) { 
+            System.out.println(i); 
+        } 
+    } 
+}
+
+========================================================================================================================================================================================================================================================================================================================
+
+
+Snippet 10: 
+ 
+public class IncorrectWhileLoopControl { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        while (num = 10) { 
+            System.out.println(num); 
+            num--; 
+        } 
+    } 
+}
+
+Error :-
+
+the while loop condition have assignment operator  not comparision operator.
+
+
+public class IncorrectWhileLoopControl { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        while (num == 10) { 
+            System.out.println(num); 
+            num--; 
+        } 
+    } 
+}
+
+
+Error :-
+
+num is assigned with Value 10 which make the condition true
+lead to infinite loop.
+
+
+Correction :-
+
+public class CorrectWhileLoopControl { 
+    public static void main(String[] args) { 
+        int num = 10; 
+        while (num > 0) { 
+            System.out.println(num); 
+            num--; 
+        } 
+    } 
+}
+
+========================================================================================================================================================================================================================================================================================================================
+
+
+Snippet 11: 
+ 
+public class IncorrectLoopUpdate { 
+    public static void main(String[] args) { 
+        int i = 0; 
+        while (i < 5) { 
+            System.out.println(i); 
+            i += 2; // Error: This may cause unexpected results in output 
+        } 
+    } 
+} 
+
+Output :-
+
+the output of code will be
+
+0
+2
+4
+
+if the desired output is from 0 to 4 the code will be 
+
+Correction :-
+
+public class CorrectLoopUpdate { 
+    public static void main(String[] args) { 
+        int i = 0; 
+        while (i < 5) { 
+            System.out.println(i); 
+            i++; 
+        } 
+    } 
+}
+
+the Output will be 
+
+0
+1
+2
+3
+4
+
+========================================================================================================================================================================================================================================================================================================================
+
+
+Snippet 12:  
+
+public class LoopVariableScope { 
+    public static void main(String[] args) { 
+        for (int i = 0; i < 5; i++) { 
+            int x = i * 2; 
+        } 
+        System.out.println(x);  
+    } 
+}
+
+Error :-
+
+the variable x is not intialized that will give compilation error.
+
+
+
+
+
+
+
+
+
+
+
