@@ -1,0 +1,48 @@
+==================================================== PART - A =============================================================================
+
+
+What the Following Command do
+
+echo "Hello, World!"	-	This command prints "Hello, World!" to the terminal.
+
+name="Productive"	-	This command assigns the value "Productive" to the variable name.
+
+touch file.txt		-	 This command creates an empty file named file.txt or updates the modification time if it already exists.
+
+ls -a			-	This command lists all files and directories, including hidden ones (those starting with a dot).
+
+rm file.txt		-	This command deletes the file file.txt.
+
+cp file1.txt file2.txt	-	 This command copies the contents of file1.txt to file2.txt. If file2.txt does not exist, it will be 					created.
+
+mv file.txt /path/to/directory/ 	-	This command moves file.txt to the specified directory.
+
+chmod 755 script.sh	-	This command changes the permissions of script.sh to rwxr-xr-x, making it executable by the owner and 					readable and executable by others.
+
+grep "pattern" file.txt		-	This command searches for the string "pattern" in file.txt and displays the matching lines.
+
+kill PID		-	This command sends a termination signal to the process with the specified PID (Process ID).
+
+mkdir mydir && cd mydir && touch file.txt && echo "Hello, World!" > file.txt && cat file.txt 
+	
+This command creates a directory mydir, changes into mydir, creates an empty file file.txt, writes "Hello, World!" into file.txt, and displays its contents.
+
+ls -l | grep ".txt" 	-	This command lists detailed information about files and directories and filters the list to show only those containing ".txt".
+
+cat file1.txt file2.txt | sort | uniq	-	 This command concatenates file1.txt and file2.txt, sorts the combined contents, and removes duplicate lines.
+
+ls -l | grep "^d" 	-	This command lists detailed information about files and directories and filters the list to show only directories.
+
+grep -r "pattern" /path/to/directory/ 	-	This command searches for the string "pattern" recursively within the specified directory and its subdirectories.
+
+cat file1.txt file2.txt | sort | uniq –d	-	 This command concatenates file1.txt and file2.txt, sorts the combined contents, and displays only the duplicate lines.
+
+chmod 644 file.txt 	-	This command changes the permissions of file.txt to rw-r--r--, making it readable and writable by the owner and readable by others.
+
+cp -r source_directory destination_directory -	This command copies the directory source_directory and its contents to destination_directory.
+
+find /path/to/search -name "*.txt"	-	 This command searches for all files with a .txt extension within the specified path and its subdirectories.
+
+chmod u+x file.txt 	-	This command adds execute permission for the owner of file.txt.
+
+echo $PATH 	-	This command prints the current value of the PATH environment variable, which lists directories where the system looks for executable files.
